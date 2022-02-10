@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+<body>
+    
+    <h2>Add your comment, please!</h2>
+
+    <section>
+        <h4>Yourcommens</h4>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint inventore aspernatur voluptatibus numquam perspiciatis excepturi illo doloribus ullam molestias, recusandae sed ex, dignissimos aliquid, dolore quam tempore ipsa provident mollitia?</p>
+
+            <p>Consectetur qui placeat quaerat eos ut ratione illo modi similique non, magnam sapiente corrupti quia, sequi aperiam inventore corporis sunt quasi repellat doloremque nostrum est accusantium rem expedita? Illo, soluta?</p>     
+        </div>
+
+        <div>
+            <p>Add your comment please</p>
+            <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+<br>
+            <button id="submit-comment">Post</button>    
+        </div>
+    </section>
+
+    <script>
+
+                // 1) add button event handler
+        document.getElementById('submit-comment').addEventListener('click', function(){
+
+                // 2) get user comment
+            const commentBox = document.getElementById('new-comment');
+            // const userComment = commentBox.value;
+
+    /*              add comment from user
+                3) create comment paragraph
+    */ 
+            const newComment = document.createElement('p');
+                newComment.innerText = commentBox.value; //userComment
+
+                    // 4) append the comment
+            const commentContainer = document.getElementById('comment-container');
+            commentContainer.appendChild(newComment);
+
+                    //5) Clean the comment box
+            commentBox.value = '';
+
+        })
+
+    </script>
+
+    <script src="js/comment.js"></script>
+</body>
+</html>
