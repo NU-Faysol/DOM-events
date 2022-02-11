@@ -13,7 +13,7 @@
         <h3 id="secret-info">Very very important secret information</h3>
             
             <input id="delete-confirm" type="text" placeholder="please type delete">
-                <button id="delete-btn">Delete</button>
+                <button id="delete-btn" disabled>Delete</button>
     </section>
 
     <script>
@@ -23,6 +23,27 @@
             document.getElementById('secret-info').style.display  = 'none';
         
         })
+
+                    //6) keyup
+        document.getElementById('delete-confirm').addEventListener('keyup', function(event){
+
+            const deleteBtn = document.getElementById('delete-btn');
+            if(event.target.value == 'delete'){
+
+                deleteBtn.removeAttribute('disabled');
+            }
+            else{
+                deleteBtn.setAttribute('disabled',true);
+            }
+      
+});
+
+            //7) change (যদি কিছু পরিবর্তন হয় তাহলে ধরে ফেলবে। তবে focus থেকে সরিয়ে নিলেই console এ পরিবর্তন দেখা যাবে।)
+document.getElementById("delete-confirm").addEventListener('change', function(){
+
+const deleteField = document.getElementById("delete-confirm");
+      console.log(deleteField.value);
+})
 
     </script>
 
